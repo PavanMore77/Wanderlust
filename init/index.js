@@ -1,13 +1,19 @@
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
+
+const DB_URL = process.env.ATLASDB_URL;
+
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
 main()
-    .then(() => { console.log("connected to DB"); })
-    .catch((err) => { console.log(err); });
+  .then(() => { console.log("connected to DB"); })
+  .catch((err) => { console.log(err); });
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/project1');
+  await mongoose.connect(DB_URL);
 }
 
 const initDB = async () => {

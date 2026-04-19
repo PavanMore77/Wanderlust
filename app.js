@@ -25,11 +25,6 @@ const listingRouter = require("./routes/listing.js");          // Express Router
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
-// const Listing = require("./models/listing.js");
-// const Review = require("./models/review.js");
-// const wrapAsync = require("./utils/wrapAsync.js");
-// const { joiSchema, reviewSchema } = require("./newSchema.js");
-
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.engine('ejs', ejsMate);         // ejs - Mate
